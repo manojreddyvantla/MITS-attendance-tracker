@@ -6,7 +6,6 @@ import { useAuth } from '../context/AuthContext';
 export const Login = () => {
   const [rollNumber, setRollNumber] = useState('');
   const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(true);
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -98,19 +97,10 @@ export const Login = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-between text-xs text-slate-400">
-              <label className="flex items-center gap-2 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={rememberMe}
-                  onChange={(e) => setRememberMe(e.target.checked)}
-                  className="w-4 h-4 rounded border-slate-800 bg-slate-950 text-brand-600 focus:ring-brand-500"
-                />
-                <span className="font-medium">Remember Credentials</span>
-              </label>
-
-              <span className="text-[11px] text-slate-500 font-medium">Official Student Account</span>
-            </div>
+    <div className="flex items-center justify-between text-xs text-slate-400">
+      <span className="text-[11px] text-slate-400 font-medium">MITS Student Session</span>
+      <span className="text-[11px] text-slate-500 font-medium">Official Portal Handshake</span>
+    </div>
 
             <button
               type="submit"

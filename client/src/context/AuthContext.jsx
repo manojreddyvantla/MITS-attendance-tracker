@@ -5,7 +5,11 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem('mits_token') || null);
+  const [token, setToken] = useState(() => {
+    // Clear old localStorage if any to avoid auto-login
+    localStorage.removeItem('mits_token');
+    return sessionStorage.getItem('mits_token') || null;
+  });
   const [loading, setLoading] = useState(true);
 
   // Set default axios header
@@ -43,7 +47,8 @@ export const AuthProvider = ({ children }) => {
     if (res.data.success) {
       const newToken = res.data.token;
       setToken(newToken);
-      localStorage.setItem('mits_token', newToken);
+      sessionStorage.setItem('mits_token', newToken);
+      localStorage.removeItem('mits_token');
       axios.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
       setUser(res.data.user);
       return res.data;
@@ -55,7 +60,8 @@ export const AuthProvider = ({ children }) => {
     if (res.data.success) {
       const newToken = res.data.token;
       setToken(newToken);
-      localStorage.setItem('mits_token', newToken);
+      sessionStorage.setItem('mits_token', newToken);
+      localStorage.removeItem('mits_token');
       axios.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
       setUser(res.data.user);
       return res.data;
@@ -63,6 +69,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
+    sessionStorage.removeItem('mits_token');
     localStorage.removeItem('mits_token');
     delete axios.defaults.headers.common['Authorization'];
     setToken(null);
