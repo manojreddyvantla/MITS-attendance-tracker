@@ -25,8 +25,8 @@ export const StatusBadge = ({ percentage, target = 75, statusOverride, showIcon 
 
   if (status === 'SAFE' || pct >= target) {
     return (
-      <span className={`inline-flex items-center gap-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-xs font-extrabold ${sizes[size]}`}>
-        {showIcon && <CheckCircle2 size={iconSizes[size]} className="text-emerald-600 shrink-0" />}
+      <span className={`inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 shadow-xs font-bold ${sizes[size]}`}>
+        {showIcon && <CheckCircle2 size={iconSizes[size]} className="text-emerald-400 shrink-0" />}
         SAFE ({pct.toFixed(1)}%)
       </span>
     );
@@ -34,16 +34,16 @@ export const StatusBadge = ({ percentage, target = 75, statusOverride, showIcon 
 
   if (status === 'WARNING' || (pct >= 70 && pct < target)) {
     return (
-      <span className={`inline-flex items-center gap-1.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 shadow-xs font-extrabold ${sizes[size]}`}>
-        {showIcon && <AlertTriangle size={iconSizes[size]} className="text-amber-600 shrink-0" />}
+      <span className={`inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 shadow-xs font-bold ${sizes[size]}`}>
+        {showIcon && <AlertTriangle size={iconSizes[size]} className="text-amber-400 shrink-0" />}
         WARNING ({pct.toFixed(1)}%)
       </span>
     );
   }
 
   return (
-    <span className={`inline-flex items-center gap-1.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200 shadow-xs font-extrabold ${sizes[size]}`}>
-      {showIcon && <AlertCircle size={iconSizes[size]} className="text-rose-600 shrink-0" />}
+    <span className={`inline-flex items-center gap-1.5 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/30 shadow-xs font-bold ${sizes[size]}`}>
+      {showIcon && <AlertCircle size={iconSizes[size]} className="text-rose-400 shrink-0" />}
       CRITICAL ({pct.toFixed(1)}%)
     </span>
   );

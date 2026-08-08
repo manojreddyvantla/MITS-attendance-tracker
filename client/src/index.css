@@ -5,57 +5,43 @@
 @layer base {
   body {
     font-family: 'Inter', sans-serif;
-    @apply bg-slate-50 text-slate-900 antialiased min-h-screen selection:bg-brand-500 selection:text-white;
+    @apply bg-[#0b0f19] text-slate-100 antialiased min-h-screen selection:bg-brand-500 selection:text-white;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
   }
 }
 
-/* Bright modern scrollbars */
+/* Eye-friendly modern scrollbars */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #334155;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #475569;
 }
 
-/* Glass panels & Modern cards */
+/* Comfortable Glass Panels & Cards */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(17, 24, 39, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-}
-
-.dark .glass-panel {
-  background: rgba(15, 23, 42, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-.bright-hero-gradient {
-  background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15), transparent 70%),
-              radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.12), transparent 50%),
-              radial-gradient(circle at 90% 30%, rgba(168, 85, 247, 0.12), transparent 50%);
+.soft-card {
+  @apply bg-slate-900/90 border border-slate-800 rounded-2xl shadow-lg;
 }
 
-.bright-card {
-  @apply bg-white border border-slate-200/80 rounded-3xl shadow-sm hover:shadow-md transition-all;
-}
-
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-indigo-600 to-purple-600;
-}
 
