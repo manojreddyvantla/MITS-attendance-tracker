@@ -1,31 +1,43 @@
-# MITS Attendance AI
+# MITS Attendance Tracker
 
-### Full Academic Title:
-**"MITS Attendance AI: An Intelligent Attendance Tracking, Prediction and Recommendation System"**
+### Developed by **Manoj Kumar Reddy** &bull; **CSE(AI & ML)**
+**Madanapalle Institute of Technology & Science**
 
 ---
 
 ## 📌 Project Overview
-**MITS Attendance AI** is a state-of-the-art full-stack web application designed for students of Madanapalle Institute of Technology & Science (MITS) to track, calculate, predict, and optimize their academic class attendance.
+**MITS Attendance Tracker** is a state-of-the-art full-stack web application designed for students of Madanapalle Institute of Technology & Science (MITS) to track, calculate, predict, and optimize their academic class attendance directly with the live MITS portal.
 
-By unifying normalized MITS attendance data retrieval with exact integer calculation engines and LLM-powered prediction algorithms, the system eliminates attendance shortage condonation risks and provides personalized recovery plans.
+---
+
+## 🚀 1-Click Deployment Guide (Prevents "Cannot GET /index.html")
+
+### Option 1: Deploy on Render (Recommended for Fullstack)
+1. Go to [Render.com](https://render.com/) and click **New +** -> **Web Service**.
+2. Connect your GitHub repository: `https://github.com/manojreddyvantla/MITS-attendance-tracker.git`.
+3. Configure settings:
+   - **Environment**: `Node`
+   - **Build Command**: `npm run build`
+   - **Start Command**: `npm start`
+4. Set Environment Variables:
+   - `MITS_INTEGRATION_MODE` = `live`
+   - `JWT_SECRET` = `mits_super_secret_jwt_key_2026`
+   - `PORT` = `5000`
+5. Click **Create Web Service**. Your app is live!
+
+### Option 2: Deploy on Vercel
+1. Import repository on [Vercel](https://vercel.com/new).
+2. The included `vercel.json` and `client/public/_redirects` automatically configure API routing and SPA routing so direct URLs and page refreshes work seamlessly.
+3. Click **Deploy**.
 
 ---
 
 ## ✨ Key Features
-1. **Student Application Login**: Secure JWT & bcrypt authentication decoupled from MITS login credentials.
-2. **MITS Attendance Sync Provider**: Modular provider architecture (`server/services/mits/`) supporting live or safe mock integration modes (`MITS_INTEGRATION_MODE=mock`).
-3. **Overall & Subject-wise Metrics**: Live status indicators:
-   - **GREEN**: Attendance $\ge 75\%$ (SAFE)
-   - **YELLOW**: Attendance $70\% - 74.99\%$ (WARNING)
-   - **RED**: Attendance $< 70\%$ (CRITICAL)
-4. **Attendance Calculator**: Exact integer math calculations for required consecutive classes and safe bunks.
-5. **Predictive Risk Engine**: Classifies overall and subject-level risk into **LOW**, **MEDIUM**, **HIGH**, and **CRITICAL** tiers.
-6. **Recharts Trend Analytics**: Bar charts comparing subject attendance against target thresholds.
-7. **Interactive Attendance Calendar**: Monthly visual grid displaying daily present/absent logs.
-8. **ChatGPT-style AI Assistant**: Context-aware LLM advisor answering custom student queries with real data.
-9. **Smart Notification Center**: Real-time alerts for low attendance thresholds and sync updates.
-10. **Customizable Target Thresholds**: Configurable target attendance (65%, 70%, 75%, 80%, 85%, 90%).
+1. **Live Student Authentication**: Direct session handshake with MITS portal using Roll Number and Password.
+2. **Real-time Attendance Sync**: Fetches up-to-date attendance for all enrolled subjects.
+3. **Attendance Calculator**: Exact integer math calculations for required consecutive classes and safe bunks.
+4. **Predictive Risk Engine**: Classifies overall and subject-level risk into SAFE, WARNING, and CRITICAL tiers.
+5. **Modern Bright UI**: Clean, high-contrast, responsive interface built with Tailwind CSS.
 
 ---
 
