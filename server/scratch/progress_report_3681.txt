@@ -1,0 +1,155 @@
+{
+    enableButton:'3681',
+        formPanel :
+            {
+                tab:"progress",
+                renderTo : 'dynacontent',
+                id:'ProgressReportForm',
+                height:"100%",
+                style:{width:'100%'},
+                items: 
+                [
+                    {
+                        xtype : 'fieldset',
+                        height:"18%",
+                        id:"toolbarFldSet",
+                        layout:'anchor',
+                        style:{padding:'0px', "margin-top": "-1%", border:0},
+                        items :[
+                                    {
+                                        xtype : 'fieldset',
+                                        height: "35%",
+                                        id:"buttonBarFldSet",
+                                        style:{padding:'0px'},
+                                        anchor:"98%",
+                                        items :[
+                                                                                                                                                            
+                                                        {
+                                                            xtype:'button',
+                                                            id:'3579',
+                                                            cls:'paginationBtn',
+                                                            text:'I YEAR I SEMESTER - REGULAR Semester',
+                                                            listeners:{
+                                                                click:{
+                                                                    fn : function (thisObj, e, eOpts){
+                                                                        eOpts.params = {
+                                                                                 inst:Advaya.Gms.Student.instance,
+                                                                                 responseHandler:"setProgressReportForm",
+                                                                                 req:"./gemsonline-student/progressReport.action?"
+                                                                            },
+                                                                            Advaya.Gms.Student.handler.BatchClick(thisObj,e,eOpts)
+                                                                        }
+                                                                    }
+                                                                }
+                                                        }
+                                                                                                                                                            ,
+                                                        {
+                                                            xtype:'button',
+                                                            id:'3626',
+                                                            cls:'paginationBtn',
+                                                            text:'I YEAR II SEMESTER - REGULAR Semester',
+                                                            listeners:{
+                                                                click:{
+                                                                    fn : function (thisObj, e, eOpts){
+                                                                        eOpts.params = {
+                                                                                 inst:Advaya.Gms.Student.instance,
+                                                                                 responseHandler:"setProgressReportForm",
+                                                                                 req:"./gemsonline-student/progressReport.action?"
+                                                                            },
+                                                                            Advaya.Gms.Student.handler.BatchClick(thisObj,e,eOpts)
+                                                                        }
+                                                                    }
+                                                                }
+                                                        }
+                                                                                                                                                            ,
+                                                        {
+                                                            xtype:'button',
+                                                            id:'3681',
+                                                            cls:'paginationBtn',
+                                                            text:'II YEAR I SEMESTER - REGULAR Semester',
+                                                            listeners:{
+                                                                click:{
+                                                                    fn : function (thisObj, e, eOpts){
+                                                                        eOpts.params = {
+                                                                                 inst:Advaya.Gms.Student.instance,
+                                                                                 responseHandler:"setProgressReportForm",
+                                                                                 req:"./gemsonline-student/progressReport.action?"
+                                                                            },
+                                                                            Advaya.Gms.Student.handler.BatchClick(thisObj,e,eOpts)
+                                                                        }
+                                                                    }
+                                                                }
+                                                        }
+                                                                                                                                                            ,
+                                                        {
+                                                            xtype:'button',
+                                                            id:'3722',
+                                                            cls:'paginationBtn',
+                                                            text:'II YEAR II SEMESTER - REGULAR Semester',
+                                                            listeners:{
+                                                                click:{
+                                                                    fn : function (thisObj, e, eOpts){
+                                                                        eOpts.params = {
+                                                                                 inst:Advaya.Gms.Student.instance,
+                                                                                 responseHandler:"setProgressReportForm",
+                                                                                 req:"./gemsonline-student/progressReport.action?"
+                                                                            },
+                                                                            Advaya.Gms.Student.handler.BatchClick(thisObj,e,eOpts)
+                                                                        }
+                                                                    }
+                                                                }
+                                                        }
+                                                                                                                                                            ,
+                                                        {
+                                                            xtype:'button',
+                                                            id:'3759',
+                                                            cls:'paginationBtn',
+                                                            text:'III YEAR I SEMESTER - REGULAR Semester',
+                                                            listeners:{
+                                                                click:{
+                                                                    fn : function (thisObj, e, eOpts){
+                                                                        eOpts.params = {
+                                                                                 inst:Advaya.Gms.Student.instance,
+                                                                                 responseHandler:"setProgressReportForm",
+                                                                                 req:"./gemsonline-student/progressReport.action?"
+                                                                            },
+                                                                            Advaya.Gms.Student.handler.BatchClick(thisObj,e,eOpts)
+                                                                        }
+                                                                    }
+                                                                }
+                                                        }
+                                                                                                                                                    ]
+                                    },
+                                    {
+
+                                        xtype:'displayfield',
+                                        value:'<span style="font-size:14px; color:#071914; font-weight: bold;"><span style="color:#585858;">Progress Report For</span> II YEAR I SEMESTER - REGULAR Semester 2024</span>',
+                                        style:{left:"35%",top:"18%"}
+            
+                                    }
+                            ]
+                    },
+                    {
+                        xtype:'fieldset',
+                        height:"80%",
+                        layout:'anchor',
+                        id:'overAllFldSt',
+                        style:{
+                                float:'left',
+                                "margin-top": "1%",
+                                                                    
+                                                        },
+                        items:[
+                            
+                                                             {
+                                    xtype:'displayfield',
+                                    value:'<span style="color:#B40404; font-size:16px; font-weight: bolder; font-family: icon;">Progress Report is not Available for this Semester !!!</span>',
+                                    style:{float:'left', left:"28%", top:"40%"}
+                                }
+                                                        
+                        ]
+                    }
+                    
+                ]
+            },
+    }

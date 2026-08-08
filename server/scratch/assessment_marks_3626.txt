@@ -1,0 +1,62 @@
+{
+ xtype:'fieldset',
+ autoScroll:true,
+ height:450,
+ items:[
+              {
+                 xtype : 'fieldset',
+                 layout:'anchor',
+                 anchor:'100%',
+                  padding: '0 0 0 4',
+                  border: false,
+                  componentCls: 'bottom-border-header',
+                  defaults : {
+                        labelWidth : 50,
+                        labelStyle : "background  : none",
+                        style:{ float:'left'}
+                        },
+                        items:[
+                                {
+                                    xtype: 'displayfield',
+                                    margin:'10 0 0 0',
+                                    anchor:'5%',
+                                    value:'<span style="color:blue;font-size:12px;"><b>S.NO</b></span>'
+                                }
+                                ,{
+                                    xtype: 'displayfield',
+                                    margin: '10 0 0 0',
+                                    anchor:'12%',
+                                    value: '<span style="color:blue;font-size:12px;"><b>CODE</b></span>'
+                                },
+                                {
+                                    xtype: 'displayfield',
+                                    margin: '10 0 0 0',
+                                    anchor:'28%',
+                                    value: '<span style="color:blue;font-size:12px;"><b>SUBJECT</b></span>'
+                                },
+                                                                                               ]
+            },
+                                       {
+                         xtype : 'fieldset',
+                         layout:'anchor',
+                         anchor:'100%',
+                         padding: '0 0 0 4',
+                         componentCls: 'bottom-border',
+                         defaults : {
+                            labelWidth : 50,
+                            style:{ float:'left'},
+                            labelStyle : "background  : none"
+                         },
+                         margin:'-6 0 0 0',
+                         items:[
+                                    {
+                                        xtype: 'displayfield',
+                                        margin: '10 0 10 0',
+                                        anchor:'90%',
+                                        value : '<span style = "font-size:12px;padding: 9px">No assessment created for current semester</span>'
+                                    }
+                                ]
+                         }
+                      
+                 ]
+}

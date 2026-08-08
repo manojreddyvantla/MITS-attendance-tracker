@@ -1,0 +1,1563 @@
+{
+  "users": [
+    {
+      "id": "usr-demo-1786093383311",
+      "roll_number": "21691A0501",
+      "password_hash": "$2a$10$.su9YgxDk.JT6.PD90RTsOOcis2bTPXpSKTsP6WxzYhJDEE.sY.06",
+      "email": "21691a0501@mits.ac.in",
+      "full_name": "Student (21691A0501)",
+      "role": "student",
+      "target_attendance_pct": 75,
+      "dark_mode": 1
+    },
+    {
+      "id": "usr-demo-1786093405045",
+      "roll_number": "24691A3365",
+      "password_hash": "$2a$10$DwiZH.FEsbVJLzZuAupDGesOFYpkHjSptFPKfSqNjZ9NuCHK5CiPa",
+      "email": "24691a3365@mits.ac.in",
+      "full_name": "VANTLA MANOJ KUMAR REDDY",
+      "role": "student",
+      "target_attendance_pct": 75,
+      "dark_mode": 1,
+      "mits_connected": 1
+    },
+    {
+      "id": "usr-demo-1786093422563",
+      "roll_number": "24691A3301",
+      "password_hash": "$2a$10$c2R6s48nFBKKjgaBUPJ9ROH1kNti059xUV9QqfvWHlUOl.Po/1rNG",
+      "email": "24691a3301@mits.ac.in",
+      "full_name": "Student (24691A3301)",
+      "role": "student",
+      "target_attendance_pct": 75,
+      "dark_mode": 1
+    },
+    {
+      "id": "usr-24691a3360",
+      "roll_number": "24691A3360",
+      "password_hash": "$2a$10$V8d8jUHEKJ3DB/HMTxbOTu6zg.ZfpDj8G44NwLaCD5.KNQOhO4lA.",
+      "email": "24691a3360@mits.ac.in",
+      "full_name": "KOTAKONDA MADHURI",
+      "role": "student",
+      "target_attendance_pct": 75,
+      "dark_mode": 1,
+      "mits_connected": 1
+    },
+    {
+      "id": "usr-24691a3317",
+      "roll_number": "24691A3317",
+      "password_hash": "$2a$10$.v0b0iJTiVBmI1kymGbJjOHeUzlWMJ1UVJOfGOgzJPcp1eC6dNMSS",
+      "email": "24691a3317@mits.ac.in",
+      "full_name": "Student (24691A3317)",
+      "role": "student",
+      "target_attendance_pct": 75,
+      "dark_mode": 1
+    }
+  ],
+  "students": [
+    {
+      "id": "usr-demo-1786093383311",
+      "user_id": "usr-demo-1786093383311",
+      "roll_number": "21691A0501",
+      "full_name": "Student (21691A0501)",
+      "department": "Computer Science & Engineering (AI & ML)",
+      "year": 3,
+      "semester": 6
+    },
+    {
+      "id": "usr-demo-1786093405045",
+      "user_id": "usr-demo-1786093405045",
+      "roll_number": "24691A3365",
+      "full_name": "VANTLA MANOJ KUMAR REDDY",
+      "department": "Computer Science & Engineering (AI & ML)",
+      "year": 3,
+      "semester": "III YEAR I SEMESTER - REGULAR"
+    },
+    {
+      "id": "usr-demo-1786093422563",
+      "user_id": "usr-demo-1786093422563",
+      "roll_number": "24691A3301",
+      "full_name": "Student (24691A3301)",
+      "department": "Computer Science & Engineering (AI & ML)",
+      "year": 3,
+      "semester": 6
+    },
+    {
+      "id": "usr-24691a3360",
+      "user_id": "usr-24691a3360",
+      "roll_number": "24691A3360",
+      "full_name": "KOTAKONDA MADHURI",
+      "department": "Computer Science & Engineering (AI & ML)",
+      "year": 3,
+      "semester": "III YEAR I SEMESTER - REGULAR"
+    },
+    {
+      "id": "usr-24691a3317",
+      "user_id": "usr-24691a3317",
+      "roll_number": "24691A3317",
+      "full_name": "Student (24691A3317)",
+      "department": "Computer Science & Engineering (AI & ML)",
+      "year": 3,
+      "semester": 6
+    }
+  ],
+  "subjects": [
+    {
+      "id": "sub-ai-301",
+      "subject_code": "AI-301",
+      "subject_name": "Artificial Intelligence",
+      "credits": 3
+    },
+    {
+      "id": "sub-ml-302",
+      "subject_code": "ML-302",
+      "subject_name": "Machine Learning",
+      "credits": 3
+    },
+    {
+      "id": "sub-dbms-303",
+      "subject_code": "DBMS-303",
+      "subject_name": "Database Management Systems",
+      "credits": 3
+    },
+    {
+      "id": "sub-os-304",
+      "subject_code": "OS-304",
+      "subject_name": "Operating Systems",
+      "credits": 3
+    },
+    {
+      "id": "sub-cn-305",
+      "subject_code": "CN-305",
+      "subject_name": "Computer Networks",
+      "credits": 3
+    },
+    {
+      "id": "sub-se-306",
+      "subject_code": "SE-306",
+      "subject_name": "Software Engineering",
+      "credits": 3
+    },
+    {
+      "id": "sub-20cse103",
+      "subject_code": "20CSE103",
+      "subject_name": "Data Structures & Algorithms",
+      "credits": 3
+    },
+    {
+      "id": "sub-20csm101",
+      "subject_code": "20CSM101",
+      "subject_name": "Artificial Intelligence & Intelligent Agents",
+      "credits": 3
+    },
+    {
+      "id": "sub-20cse104",
+      "subject_code": "20CSE104",
+      "subject_name": "Database Management Systems",
+      "credits": 3
+    },
+    {
+      "id": "sub-20cse105",
+      "subject_code": "20CSE105",
+      "subject_name": "Object Oriented Programming through Java",
+      "credits": 3
+    },
+    {
+      "id": "sub-20mat104",
+      "subject_code": "20MAT104",
+      "subject_name": "Discrete Mathematical Structures",
+      "credits": 3
+    },
+    {
+      "id": "sub-20cse201",
+      "subject_code": "20CSE201",
+      "subject_name": "Database Management Systems Laboratory",
+      "credits": 3
+    },
+    {
+      "id": "sub-aptitude",
+      "subject_code": "APTITUDE",
+      "subject_name": "APTITUDE CLASSES",
+      "credits": 3
+    },
+    {
+      "id": "sub-softskills",
+      "subject_code": "SOFTSKILLS",
+      "subject_name": "SOFT SKILLS",
+      "credits": 3
+    },
+    {
+      "id": "sub-23phy102",
+      "subject_code": "23PHY102",
+      "subject_name": "INTRODUCTION TO QUANTUM TECHNOLOGIES AND APPLICATIONS",
+      "credits": 3
+    },
+    {
+      "id": "sub-23eng901",
+      "subject_code": "23ENG901",
+      "subject_name": "TECHNICAL PAPER WRITING AND IPR",
+      "credits": 3
+    },
+    {
+      "id": "sub-23csm107",
+      "subject_code": "23CSM107",
+      "subject_name": "OPERATING SYSTEMS",
+      "credits": 3
+    },
+    {
+      "id": "sub-23csm108",
+      "subject_code": "23CSM108",
+      "subject_name": "COMPUTER NETWORKS",
+      "credits": 3
+    },
+    {
+      "id": "sub-23csm109",
+      "subject_code": "23CSM109",
+      "subject_name": "COMPUTER VISION AND IMAGE PROCESSING",
+      "credits": 3
+    },
+    {
+      "id": "sub-23csm205",
+      "subject_code": "23CSM205",
+      "subject_name": "COMPUTER NETWORKS LABORATORY",
+      "credits": 3
+    },
+    {
+      "id": "sub-23csm206",
+      "subject_code": "23CSM206",
+      "subject_name": "COMPUTER VISION LABORATORY",
+      "credits": 3
+    },
+    {
+      "id": "sub-23csm4m02",
+      "subject_code": "23CSM4M02",
+      "subject_name": "INTRODUCTION TO INTERNET OF THINGS",
+      "credits": 3
+    },
+    {
+      "id": "sub-23csm603",
+      "subject_code": "23CSM603",
+      "subject_name": "FULL STACK DEVELOPMENT II",
+      "credits": 3
+    },
+    {
+      "id": "sub-23csm4m07",
+      "subject_code": "23CSM4M07",
+      "subject_name": "DISTRIBUTED SYSTEMS CSM",
+      "credits": 3
+    }
+  ],
+  "attendance": [
+    {
+      "id": "att-usr-demo-1786093383311-ai-301",
+      "student_id": "usr-demo-1786093383311",
+      "subject_code": "AI-301",
+      "subject_name": "Artificial Intelligence",
+      "attended_classes": 31,
+      "absent_classes": 4,
+      "total_classes": 35,
+      "attendance_percentage": 88.57,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:03:03.779Z"
+    },
+    {
+      "id": "att-usr-demo-1786093383311-ml-302",
+      "student_id": "usr-demo-1786093383311",
+      "subject_code": "ML-302",
+      "subject_name": "Machine Learning",
+      "attended_classes": 25,
+      "absent_classes": 7,
+      "total_classes": 32,
+      "attendance_percentage": 78.13,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:03:03.786Z"
+    },
+    {
+      "id": "att-usr-demo-1786093383311-dbms-303",
+      "student_id": "usr-demo-1786093383311",
+      "subject_code": "DBMS-303",
+      "subject_name": "Database Management Systems",
+      "attended_classes": 20,
+      "absent_classes": 9,
+      "total_classes": 29,
+      "attendance_percentage": 68.97,
+      "status": "CRITICAL",
+      "last_updated": "2026-08-07T09:03:03.791Z"
+    },
+    {
+      "id": "att-usr-demo-1786093383311-os-304",
+      "student_id": "usr-demo-1786093383311",
+      "subject_code": "OS-304",
+      "subject_name": "Operating Systems",
+      "attended_classes": 29,
+      "absent_classes": 5,
+      "total_classes": 34,
+      "attendance_percentage": 85.29,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:03:03.798Z"
+    },
+    {
+      "id": "att-usr-demo-1786093383311-cn-305",
+      "student_id": "usr-demo-1786093383311",
+      "subject_code": "CN-305",
+      "subject_name": "Computer Networks",
+      "attended_classes": 27,
+      "absent_classes": 6,
+      "total_classes": 33,
+      "attendance_percentage": 81.82,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:03:03.803Z"
+    },
+    {
+      "id": "att-usr-demo-1786093383311-se-306",
+      "student_id": "usr-demo-1786093383311",
+      "subject_code": "SE-306",
+      "subject_name": "Software Engineering",
+      "attended_classes": 30,
+      "absent_classes": 3,
+      "total_classes": 33,
+      "attendance_percentage": 90.91,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:03:03.809Z"
+    },
+    {
+      "id": "att-usr-demo-1786093422563-ai-301",
+      "student_id": "usr-demo-1786093422563",
+      "subject_code": "AI-301",
+      "subject_name": "Artificial Intelligence",
+      "attended_classes": 31,
+      "absent_classes": 4,
+      "total_classes": 35,
+      "attendance_percentage": 88.57,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:03:42.991Z"
+    },
+    {
+      "id": "att-usr-demo-1786093422563-ml-302",
+      "student_id": "usr-demo-1786093422563",
+      "subject_code": "ML-302",
+      "subject_name": "Machine Learning",
+      "attended_classes": 25,
+      "absent_classes": 7,
+      "total_classes": 32,
+      "attendance_percentage": 78.13,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:03:42.998Z"
+    },
+    {
+      "id": "att-usr-demo-1786093422563-dbms-303",
+      "student_id": "usr-demo-1786093422563",
+      "subject_code": "DBMS-303",
+      "subject_name": "Database Management Systems",
+      "attended_classes": 20,
+      "absent_classes": 9,
+      "total_classes": 29,
+      "attendance_percentage": 68.97,
+      "status": "CRITICAL",
+      "last_updated": "2026-08-07T09:03:43.002Z"
+    },
+    {
+      "id": "att-usr-demo-1786093422563-os-304",
+      "student_id": "usr-demo-1786093422563",
+      "subject_code": "OS-304",
+      "subject_name": "Operating Systems",
+      "attended_classes": 29,
+      "absent_classes": 5,
+      "total_classes": 34,
+      "attendance_percentage": 85.29,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:03:43.005Z"
+    },
+    {
+      "id": "att-usr-demo-1786093422563-cn-305",
+      "student_id": "usr-demo-1786093422563",
+      "subject_code": "CN-305",
+      "subject_name": "Computer Networks",
+      "attended_classes": 27,
+      "absent_classes": 6,
+      "total_classes": 33,
+      "attendance_percentage": 81.82,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:03:43.008Z"
+    },
+    {
+      "id": "att-usr-demo-1786093422563-se-306",
+      "student_id": "usr-demo-1786093422563",
+      "subject_code": "SE-306",
+      "subject_name": "Software Engineering",
+      "attended_classes": 30,
+      "absent_classes": 3,
+      "total_classes": 33,
+      "attendance_percentage": 90.91,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:03:43.011Z"
+    },
+    {
+      "id": "att-usr-21691a0501-ai-301",
+      "student_id": "usr-21691a0501",
+      "subject_code": "AI-301",
+      "subject_name": "Artificial Intelligence",
+      "attended_classes": 31,
+      "absent_classes": 4,
+      "total_classes": 35,
+      "attendance_percentage": 88.57,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:14:36.764Z"
+    },
+    {
+      "id": "att-usr-21691a0501-ml-302",
+      "student_id": "usr-21691a0501",
+      "subject_code": "ML-302",
+      "subject_name": "Machine Learning",
+      "attended_classes": 25,
+      "absent_classes": 7,
+      "total_classes": 32,
+      "attendance_percentage": 78.13,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:14:36.769Z"
+    },
+    {
+      "id": "att-usr-21691a0501-dbms-303",
+      "student_id": "usr-21691a0501",
+      "subject_code": "DBMS-303",
+      "subject_name": "Database Management Systems",
+      "attended_classes": 20,
+      "absent_classes": 9,
+      "total_classes": 29,
+      "attendance_percentage": 68.97,
+      "status": "CRITICAL",
+      "last_updated": "2026-08-07T09:14:36.774Z"
+    },
+    {
+      "id": "att-usr-21691a0501-os-304",
+      "student_id": "usr-21691a0501",
+      "subject_code": "OS-304",
+      "subject_name": "Operating Systems",
+      "attended_classes": 29,
+      "absent_classes": 5,
+      "total_classes": 34,
+      "attendance_percentage": 85.29,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:14:36.778Z"
+    },
+    {
+      "id": "att-usr-21691a0501-cn-305",
+      "student_id": "usr-21691a0501",
+      "subject_code": "CN-305",
+      "subject_name": "Computer Networks",
+      "attended_classes": 27,
+      "absent_classes": 6,
+      "total_classes": 33,
+      "attendance_percentage": 81.82,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:14:36.782Z"
+    },
+    {
+      "id": "att-usr-21691a0501-se-306",
+      "student_id": "usr-21691a0501",
+      "subject_code": "SE-306",
+      "subject_name": "Software Engineering",
+      "attended_classes": 30,
+      "absent_classes": 3,
+      "total_classes": 33,
+      "attendance_percentage": 90.91,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T09:14:36.787Z"
+    },
+    {
+      "id": "att-usr-24691a3317-20cse103",
+      "student_id": "usr-24691a3317",
+      "subject_code": "20CSE103",
+      "subject_name": "Data Structures & Algorithms",
+      "attended_classes": 35,
+      "absent_classes": 5,
+      "total_classes": 40,
+      "attendance_percentage": 87.5,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T14:42:39.866Z"
+    },
+    {
+      "id": "att-usr-24691a3317-20csm101",
+      "student_id": "usr-24691a3317",
+      "subject_code": "20CSM101",
+      "subject_name": "Artificial Intelligence & Intelligent Agents",
+      "attended_classes": 27,
+      "absent_classes": 9,
+      "total_classes": 36,
+      "attendance_percentage": 75,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T14:42:39.872Z"
+    },
+    {
+      "id": "att-usr-24691a3317-20cse104",
+      "student_id": "usr-24691a3317",
+      "subject_code": "20CSE104",
+      "subject_name": "Database Management Systems",
+      "attended_classes": 32,
+      "absent_classes": 6,
+      "total_classes": 38,
+      "attendance_percentage": 84.21,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T14:42:39.878Z"
+    },
+    {
+      "id": "att-usr-24691a3317-20cse105",
+      "student_id": "usr-24691a3317",
+      "subject_code": "20CSE105",
+      "subject_name": "Object Oriented Programming through Java",
+      "attended_classes": 40,
+      "absent_classes": 2,
+      "total_classes": 42,
+      "attendance_percentage": 95.24,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T14:42:39.883Z"
+    },
+    {
+      "id": "att-usr-24691a3317-20mat104",
+      "student_id": "usr-24691a3317",
+      "subject_code": "20MAT104",
+      "subject_name": "Discrete Mathematical Structures",
+      "attended_classes": 26,
+      "absent_classes": 9,
+      "total_classes": 35,
+      "attendance_percentage": 74.29,
+      "status": "WARNING",
+      "last_updated": "2026-08-07T14:42:39.888Z"
+    },
+    {
+      "id": "att-usr-24691a3317-20cse201",
+      "student_id": "usr-24691a3317",
+      "subject_code": "20CSE201",
+      "subject_name": "Database Management Systems Laboratory",
+      "attended_classes": 15,
+      "absent_classes": 0,
+      "total_classes": 15,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-07T14:42:39.895Z"
+    },
+    {
+      "id": "att-usr-24691a3365-aptitude",
+      "student_id": "usr-24691a3365",
+      "subject_code": "APTITUDE",
+      "subject_name": "APTITUDE CLASSES",
+      "attended_classes": 1,
+      "absent_classes": 0,
+      "total_classes": 1,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:04:29.915Z"
+    },
+    {
+      "id": "att-usr-24691a3365-softskills",
+      "student_id": "usr-24691a3365",
+      "subject_code": "SOFTSKILLS",
+      "subject_name": "SOFT SKILLS",
+      "attended_classes": 1,
+      "absent_classes": 0,
+      "total_classes": 1,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:04:29.916Z"
+    },
+    {
+      "id": "att-usr-24691a3365-23phy102",
+      "student_id": "usr-24691a3365",
+      "subject_code": "23PHY102",
+      "subject_name": "INTRODUCTION TO QUANTUM TECHNOLOGIES AND APPLICATIONS",
+      "attended_classes": 7,
+      "absent_classes": 3,
+      "total_classes": 10,
+      "attendance_percentage": 70,
+      "status": "WARNING",
+      "last_updated": "2026-08-08T20:04:29.917Z"
+    },
+    {
+      "id": "att-usr-24691a3365-23eng901",
+      "student_id": "usr-24691a3365",
+      "subject_code": "23ENG901",
+      "subject_name": "TECHNICAL PAPER WRITING AND IPR",
+      "attended_classes": 5,
+      "absent_classes": 0,
+      "total_classes": 5,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:04:29.918Z"
+    },
+    {
+      "id": "att-usr-24691a3365-23csm107",
+      "student_id": "usr-24691a3365",
+      "subject_code": "23CSM107",
+      "subject_name": "OPERATING SYSTEMS",
+      "attended_classes": 10,
+      "absent_classes": 0,
+      "total_classes": 10,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:04:29.920Z"
+    },
+    {
+      "id": "att-usr-24691a3365-23csm108",
+      "student_id": "usr-24691a3365",
+      "subject_code": "23CSM108",
+      "subject_name": "COMPUTER NETWORKS",
+      "attended_classes": 7,
+      "absent_classes": 0,
+      "total_classes": 7,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:04:29.920Z"
+    },
+    {
+      "id": "att-usr-24691a3365-23csm109",
+      "student_id": "usr-24691a3365",
+      "subject_code": "23CSM109",
+      "subject_name": "COMPUTER VISION AND IMAGE PROCESSING",
+      "attended_classes": 3,
+      "absent_classes": 7,
+      "total_classes": 10,
+      "attendance_percentage": 30,
+      "status": "CRITICAL",
+      "last_updated": "2026-08-08T20:04:29.921Z"
+    },
+    {
+      "id": "att-usr-24691a3365-23csm205",
+      "student_id": "usr-24691a3365",
+      "subject_code": "23CSM205",
+      "subject_name": "COMPUTER NETWORKS LABORATORY",
+      "attended_classes": 3,
+      "absent_classes": 0,
+      "total_classes": 3,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:04:29.922Z"
+    },
+    {
+      "id": "att-usr-24691a3365-23csm206",
+      "student_id": "usr-24691a3365",
+      "subject_code": "23CSM206",
+      "subject_name": "COMPUTER VISION LABORATORY",
+      "attended_classes": 12,
+      "absent_classes": 0,
+      "total_classes": 12,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:04:29.923Z"
+    },
+    {
+      "id": "att-usr-24691a3365-23csm4m02",
+      "student_id": "usr-24691a3365",
+      "subject_code": "23CSM4M02",
+      "subject_name": "INTRODUCTION TO INTERNET OF THINGS",
+      "attended_classes": 6,
+      "absent_classes": 3,
+      "total_classes": 9,
+      "attendance_percentage": 66.67,
+      "status": "CRITICAL",
+      "last_updated": "2026-08-08T20:04:29.924Z"
+    },
+    {
+      "id": "att-usr-24691a3365-23csm603",
+      "student_id": "usr-24691a3365",
+      "subject_code": "23CSM603",
+      "subject_name": "FULL STACK DEVELOPMENT II",
+      "attended_classes": 6,
+      "absent_classes": 1,
+      "total_classes": 7,
+      "attendance_percentage": 85.71,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:04:29.925Z"
+    },
+    {
+      "id": "att-usr-24691a3365-23csm4m07",
+      "student_id": "usr-24691a3365",
+      "subject_code": "23CSM4M07",
+      "subject_name": "DISTRIBUTED SYSTEMS CSM",
+      "attended_classes": 4,
+      "absent_classes": 4,
+      "total_classes": 8,
+      "attendance_percentage": 50,
+      "status": "CRITICAL",
+      "last_updated": "2026-08-08T20:04:29.926Z"
+    },
+    {
+      "id": "att-usr-24691a3360-aptitude",
+      "student_id": "usr-24691a3360",
+      "subject_code": "APTITUDE",
+      "subject_name": "APTITUDE CLASSES",
+      "attended_classes": 1,
+      "absent_classes": 0,
+      "total_classes": 1,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:07:09.109Z"
+    },
+    {
+      "id": "att-usr-24691a3360-softskills",
+      "student_id": "usr-24691a3360",
+      "subject_code": "SOFTSKILLS",
+      "subject_name": "SOFT SKILLS",
+      "attended_classes": 1,
+      "absent_classes": 0,
+      "total_classes": 1,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:07:09.112Z"
+    },
+    {
+      "id": "att-usr-24691a3360-23phy102",
+      "student_id": "usr-24691a3360",
+      "subject_code": "23PHY102",
+      "subject_name": "INTRODUCTION TO QUANTUM TECHNOLOGIES AND APPLICATIONS",
+      "attended_classes": 9,
+      "absent_classes": 1,
+      "total_classes": 10,
+      "attendance_percentage": 90,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:07:09.116Z"
+    },
+    {
+      "id": "att-usr-24691a3360-23eng901",
+      "student_id": "usr-24691a3360",
+      "subject_code": "23ENG901",
+      "subject_name": "TECHNICAL PAPER WRITING AND IPR",
+      "attended_classes": 4,
+      "absent_classes": 1,
+      "total_classes": 5,
+      "attendance_percentage": 80,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:07:09.121Z"
+    },
+    {
+      "id": "att-usr-24691a3360-23csm107",
+      "student_id": "usr-24691a3360",
+      "subject_code": "23CSM107",
+      "subject_name": "OPERATING SYSTEMS",
+      "attended_classes": 8,
+      "absent_classes": 2,
+      "total_classes": 10,
+      "attendance_percentage": 80,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:07:09.126Z"
+    },
+    {
+      "id": "att-usr-24691a3360-23csm108",
+      "student_id": "usr-24691a3360",
+      "subject_code": "23CSM108",
+      "subject_name": "COMPUTER NETWORKS",
+      "attended_classes": 5,
+      "absent_classes": 2,
+      "total_classes": 7,
+      "attendance_percentage": 71.43,
+      "status": "WARNING",
+      "last_updated": "2026-08-08T20:07:09.131Z"
+    },
+    {
+      "id": "att-usr-24691a3360-23csm109",
+      "student_id": "usr-24691a3360",
+      "subject_code": "23CSM109",
+      "subject_name": "COMPUTER VISION AND IMAGE PROCESSING",
+      "attended_classes": 5,
+      "absent_classes": 5,
+      "total_classes": 10,
+      "attendance_percentage": 50,
+      "status": "CRITICAL",
+      "last_updated": "2026-08-08T20:07:09.136Z"
+    },
+    {
+      "id": "att-usr-24691a3360-23csm205",
+      "student_id": "usr-24691a3360",
+      "subject_code": "23CSM205",
+      "subject_name": "COMPUTER NETWORKS LABORATORY",
+      "attended_classes": 3,
+      "absent_classes": 0,
+      "total_classes": 3,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:07:09.140Z"
+    },
+    {
+      "id": "att-usr-24691a3360-23csm206",
+      "student_id": "usr-24691a3360",
+      "subject_code": "23CSM206",
+      "subject_name": "COMPUTER VISION LABORATORY",
+      "attended_classes": 9,
+      "absent_classes": 3,
+      "total_classes": 12,
+      "attendance_percentage": 75,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:07:09.144Z"
+    },
+    {
+      "id": "att-usr-24691a3360-23csm4m02",
+      "student_id": "usr-24691a3360",
+      "subject_code": "23CSM4M02",
+      "subject_name": "INTRODUCTION TO INTERNET OF THINGS",
+      "attended_classes": 7,
+      "absent_classes": 2,
+      "total_classes": 9,
+      "attendance_percentage": 77.78,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:07:09.147Z"
+    },
+    {
+      "id": "att-usr-24691a3360-23csm603",
+      "student_id": "usr-24691a3360",
+      "subject_code": "23CSM603",
+      "subject_name": "FULL STACK DEVELOPMENT II",
+      "attended_classes": 3,
+      "absent_classes": 4,
+      "total_classes": 7,
+      "attendance_percentage": 42.86,
+      "status": "CRITICAL",
+      "last_updated": "2026-08-08T20:07:09.152Z"
+    },
+    {
+      "id": "att-usr-24691a3360-23csm4m07",
+      "student_id": "usr-24691a3360",
+      "subject_code": "23CSM4M07",
+      "subject_name": "DISTRIBUTED SYSTEMS CSM",
+      "attended_classes": 6,
+      "absent_classes": 2,
+      "total_classes": 8,
+      "attendance_percentage": 75,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:07:09.156Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-aptitude",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "APTITUDE",
+      "subject_name": "APTITUDE CLASSES",
+      "attended_classes": 1,
+      "absent_classes": 0,
+      "total_classes": 1,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:23:58.280Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-softskills",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "SOFTSKILLS",
+      "subject_name": "SOFT SKILLS",
+      "attended_classes": 1,
+      "absent_classes": 0,
+      "total_classes": 1,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:23:58.287Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-23phy102",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "23PHY102",
+      "subject_name": "INTRODUCTION TO QUANTUM TECHNOLOGIES AND APPLICATIONS",
+      "attended_classes": 7,
+      "absent_classes": 3,
+      "total_classes": 10,
+      "attendance_percentage": 70,
+      "status": "WARNING",
+      "last_updated": "2026-08-08T20:23:58.293Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-23eng901",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "23ENG901",
+      "subject_name": "TECHNICAL PAPER WRITING AND IPR",
+      "attended_classes": 5,
+      "absent_classes": 0,
+      "total_classes": 5,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:23:58.298Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-23csm107",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "23CSM107",
+      "subject_name": "OPERATING SYSTEMS",
+      "attended_classes": 10,
+      "absent_classes": 0,
+      "total_classes": 10,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:23:58.305Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-23csm108",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "23CSM108",
+      "subject_name": "COMPUTER NETWORKS",
+      "attended_classes": 7,
+      "absent_classes": 0,
+      "total_classes": 7,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:23:58.311Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-23csm109",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "23CSM109",
+      "subject_name": "COMPUTER VISION AND IMAGE PROCESSING",
+      "attended_classes": 3,
+      "absent_classes": 7,
+      "total_classes": 10,
+      "attendance_percentage": 30,
+      "status": "CRITICAL",
+      "last_updated": "2026-08-08T20:23:58.321Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-23csm205",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "23CSM205",
+      "subject_name": "COMPUTER NETWORKS LABORATORY",
+      "attended_classes": 3,
+      "absent_classes": 0,
+      "total_classes": 3,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:23:58.326Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-23csm206",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "23CSM206",
+      "subject_name": "COMPUTER VISION LABORATORY",
+      "attended_classes": 12,
+      "absent_classes": 0,
+      "total_classes": 12,
+      "attendance_percentage": 100,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:23:58.332Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-23csm4m02",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "23CSM4M02",
+      "subject_name": "INTRODUCTION TO INTERNET OF THINGS",
+      "attended_classes": 6,
+      "absent_classes": 3,
+      "total_classes": 9,
+      "attendance_percentage": 66.67,
+      "status": "CRITICAL",
+      "last_updated": "2026-08-08T20:23:58.337Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-23csm603",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "23CSM603",
+      "subject_name": "FULL STACK DEVELOPMENT II",
+      "attended_classes": 6,
+      "absent_classes": 1,
+      "total_classes": 7,
+      "attendance_percentage": 85.71,
+      "status": "SAFE",
+      "last_updated": "2026-08-08T20:23:58.345Z"
+    },
+    {
+      "id": "att-usr-demo-1786093405045-23csm4m07",
+      "student_id": "usr-demo-1786093405045",
+      "subject_code": "23CSM4M07",
+      "subject_name": "DISTRIBUTED SYSTEMS CSM",
+      "attended_classes": 4,
+      "absent_classes": 4,
+      "total_classes": 8,
+      "attendance_percentage": 50,
+      "status": "CRITICAL",
+      "last_updated": "2026-08-08T20:23:58.354Z"
+    }
+  ],
+  "attendance_history": [
+    {
+      "id": "hist-usr-24691a3360-0",
+      "student_id": "usr-24691a3360",
+      "subject_code": "AI-301",
+      "subject_name": "AI Class",
+      "record_date": "2026-08-07",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-1",
+      "student_id": "usr-24691a3360",
+      "subject_code": "ML-302",
+      "subject_name": "ML Class",
+      "record_date": "2026-08-06",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-2",
+      "student_id": "usr-24691a3360",
+      "subject_code": "DBMS-303",
+      "subject_name": "DBMS Class",
+      "record_date": "2026-08-05",
+      "status": "ABSENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-3",
+      "student_id": "usr-24691a3360",
+      "subject_code": "OS-304",
+      "subject_name": "OS Class",
+      "record_date": "2026-08-04",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-4",
+      "student_id": "usr-24691a3360",
+      "subject_code": "CN-305",
+      "subject_name": "CN Class",
+      "record_date": "2026-08-03",
+      "status": "ABSENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-7",
+      "student_id": "usr-24691a3360",
+      "subject_code": "ML-302",
+      "subject_name": "ML Class",
+      "record_date": "2026-07-31",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-8",
+      "student_id": "usr-24691a3360",
+      "subject_code": "DBMS-303",
+      "subject_name": "DBMS Class",
+      "record_date": "2026-07-30",
+      "status": "ABSENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-9",
+      "student_id": "usr-24691a3360",
+      "subject_code": "OS-304",
+      "subject_name": "OS Class",
+      "record_date": "2026-07-29",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-10",
+      "student_id": "usr-24691a3360",
+      "subject_code": "CN-305",
+      "subject_name": "CN Class",
+      "record_date": "2026-07-28",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-11",
+      "student_id": "usr-24691a3360",
+      "subject_code": "SE-306",
+      "subject_name": "SE Class",
+      "record_date": "2026-07-27",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-14",
+      "student_id": "usr-24691a3360",
+      "subject_code": "DBMS-303",
+      "subject_name": "DBMS Class",
+      "record_date": "2026-07-24",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-15",
+      "student_id": "usr-24691a3360",
+      "subject_code": "OS-304",
+      "subject_name": "OS Class",
+      "record_date": "2026-07-23",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-16",
+      "student_id": "usr-24691a3360",
+      "subject_code": "CN-305",
+      "subject_name": "CN Class",
+      "record_date": "2026-07-22",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-17",
+      "student_id": "usr-24691a3360",
+      "subject_code": "SE-306",
+      "subject_name": "SE Class",
+      "record_date": "2026-07-21",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-18",
+      "student_id": "usr-24691a3360",
+      "subject_code": "AI-301",
+      "subject_name": "AI Class",
+      "record_date": "2026-07-20",
+      "status": "ABSENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-21",
+      "student_id": "usr-24691a3360",
+      "subject_code": "OS-304",
+      "subject_name": "OS Class",
+      "record_date": "2026-07-17",
+      "status": "ABSENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-22",
+      "student_id": "usr-24691a3360",
+      "subject_code": "CN-305",
+      "subject_name": "CN Class",
+      "record_date": "2026-07-16",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-23",
+      "student_id": "usr-24691a3360",
+      "subject_code": "SE-306",
+      "subject_name": "SE Class",
+      "record_date": "2026-07-15",
+      "status": "ABSENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-24",
+      "student_id": "usr-24691a3360",
+      "subject_code": "AI-301",
+      "subject_name": "AI Class",
+      "record_date": "2026-07-14",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-25",
+      "student_id": "usr-24691a3360",
+      "subject_code": "ML-302",
+      "subject_name": "ML Class",
+      "record_date": "2026-07-13",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-28",
+      "student_id": "usr-24691a3360",
+      "subject_code": "CN-305",
+      "subject_name": "CN Class",
+      "record_date": "2026-07-10",
+      "status": "PRESENT",
+      "sync_source": "MOCK_SYNC"
+    },
+    {
+      "id": "hist-usr-24691a3360-29",
+      "student_id": "usr-24691a3360",
+      "subject_code": "SE-306",
+      "subject_name": "SE Class",
+      "record_date": "2026-07-09",
+      "status": "ABSENT",
+      "sync_source": "MOCK_SYNC"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1786220638358",
+      "user_id": "usr-demo-1786093405045",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:23:58.358Z"
+    },
+    {
+      "id": "notif-1786220446646",
+      "user_id": "usr-demo-1786093405045",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:20:46.647Z"
+    },
+    {
+      "id": "notif-1786220217867",
+      "user_id": "usr-demo-1786093405045",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:16:57.867Z"
+    },
+    {
+      "id": "notif-1786219965397",
+      "user_id": "usr-demo-1786093405045",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:12:45.397Z"
+    },
+    {
+      "id": "notif-1786219629158",
+      "user_id": "usr-24691a3360",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3360.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:07:09.158Z"
+    },
+    {
+      "id": "notif-1786219610121",
+      "user_id": "usr-demo-1786093405045",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:06:50.121Z"
+    },
+    {
+      "id": "notif-1786219587082",
+      "user_id": "usr-demo-1786093405045",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:06:27.083Z"
+    },
+    {
+      "id": "notif-1786219551275",
+      "user_id": "usr-demo-1786093405045",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:05:51.275Z"
+    },
+    {
+      "id": "notif-1786219517490",
+      "user_id": "usr-demo-1786093405045",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:05:17.490Z"
+    },
+    {
+      "id": "notif-1786219469927",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:04:29.927Z"
+    },
+    {
+      "id": "notif-1786219409066",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:03:29.066Z"
+    },
+    {
+      "id": "notif-1786219334437",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T20:02:14.438Z"
+    },
+    {
+      "id": "notif-1786219027993",
+      "user_id": "usr-24691a3360",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3360.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T19:57:07.993Z"
+    },
+    {
+      "id": "notif-1786218878470",
+      "user_id": "usr-24691a3360",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3360.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T19:54:38.470Z"
+    },
+    {
+      "id": "notif-1786218853652",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T19:54:13.652Z"
+    },
+    {
+      "id": "notif-1786218799834",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T19:53:19.834Z"
+    },
+    {
+      "id": "notif-1786218755084",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T19:52:35.085Z"
+    },
+    {
+      "id": "notif-1786218721618",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T19:52:01.618Z"
+    },
+    {
+      "id": "notif-1786218714693",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T19:51:54.693Z"
+    },
+    {
+      "id": "notif-1786218566590",
+      "user_id": "usr-24691a3360",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3360.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T19:49:26.590Z"
+    },
+    {
+      "id": "notif-1786218545011",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 12 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-08T19:49:05.011Z"
+    },
+    {
+      "id": "notif-1786113759898",
+      "user_id": "usr-24691a3317",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3317.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T14:42:39.898Z"
+    },
+    {
+      "id": "notif-1786097004360",
+      "user_id": "usr-24691a3360",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3360.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T10:03:24.360Z"
+    },
+    {
+      "id": "notif-1786096962681",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T10:02:42.682Z"
+    },
+    {
+      "id": "notif-1786096765683",
+      "user_id": "usr-24691a3360",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3360.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:59:25.683Z"
+    },
+    {
+      "id": "notif-1786096451570",
+      "user_id": "usr-24691a3360",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3360.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:54:11.570Z"
+    },
+    {
+      "id": "notif-1786096187920",
+      "user_id": "usr-24691a3360",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3360.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:49:47.920Z"
+    },
+    {
+      "id": "notif-1786095970030",
+      "user_id": "usr-24691a3360",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3360.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:46:10.030Z"
+    },
+    {
+      "id": "notif-1786095187857",
+      "user_id": "usr-24691a3360",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3360.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:33:07.857Z"
+    },
+    {
+      "id": "notif-1786095148145",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:32:28.145Z"
+    },
+    {
+      "id": "notif-1786095114643",
+      "user_id": "usr-24691a3360",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3360.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:31:54.643Z"
+    },
+    {
+      "id": "notif-1786095074402",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:31:14.402Z"
+    },
+    {
+      "id": "notif-1786094775821",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:26:15.821Z"
+    },
+    {
+      "id": "notif-1786094560788",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:22:40.788Z"
+    },
+    {
+      "id": "notif-1786094531352",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:22:11.352Z"
+    },
+    {
+      "id": "notif-1786094352968",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:19:12.968Z"
+    },
+    {
+      "id": "notif-1786094098082",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:14:58.083Z"
+    },
+    {
+      "id": "notif-1786094076789",
+      "user_id": "usr-21691a0501",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 21691A0501.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:14:36.789Z"
+    },
+    {
+      "id": "notif-1786094044420",
+      "user_id": "usr-21691a0501",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 21691A0501.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:14:04.420Z"
+    },
+    {
+      "id": "notif-1786093935456",
+      "user_id": "usr-24691a3365",
+      "title": "MITS Portal Synced Successfully",
+      "message": "Retrieved 6 courses from http://mitsims.in/ for Roll No 24691A3365.",
+      "type": "SUCCESS",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:12:15.456Z"
+    },
+    {
+      "id": "notif-1786093423014",
+      "user_id": "usr-demo-1786093422563",
+      "title": "Welcome to MITS Attendance AI!",
+      "message": "Your attendance data has been initialized. Click Sync Attendance anytime to refresh.",
+      "type": "INFO",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:03:43.014Z"
+    },
+    {
+      "id": "notif-1786093405500",
+      "user_id": "usr-demo-1786093405045",
+      "title": "Welcome to MITS Attendance AI!",
+      "message": "Your attendance data has been initialized. Click Sync Attendance anytime to refresh.",
+      "type": "INFO",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:03:25.500Z"
+    },
+    {
+      "id": "notif-1786093383811",
+      "user_id": "usr-demo-1786093383311",
+      "title": "Welcome to MITS Attendance AI!",
+      "message": "Your attendance data has been initialized. Click Sync Attendance anytime to refresh.",
+      "type": "INFO",
+      "is_read": 0,
+      "created_at": "2026-08-07T09:03:03.811Z"
+    }
+  ],
+  "ai_conversations": [],
+  "ai_messages": [],
+  "refresh_tokens": []
+}

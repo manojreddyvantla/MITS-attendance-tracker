@@ -1,0 +1,374 @@
+{    
+            totalxiCount : 0,
+    title: 'Consolidated',
+    courseType :'Grade',
+    topPanel : {
+        formHeader:'Student Consolidated View',
+        renderTo:'dynacontent',
+        items: [{
+                xtype:'fieldset',
+                style:{border:'none'},
+                defaults:{
+                    labelPad : 20,
+                    labelWidth:150,
+                    labelAlign : 'right',
+                },
+                layout:'column',
+                items:[{
+                        xtype: 'textfield',
+                        name: 'usn',
+                        allowBlank: false,
+                        value:'24691A3365',
+                        fieldLabel: 'Enter Register No',
+                        listeners: {
+                            specialkey: Advaya.App.Parent.instance.processForm,
+                            params : {
+                                        form:true,
+                                        mask:true,
+                                        inst:Advaya.Gms.Student.instance,
+                                        action:"loadStudentForm", 
+                                        responseHandler:"setConsolidatedForm",
+                                        req:"./student/exec.action?actionType=scv&keyString=consolidate"
+                                    }
+                        }
+                    },
+                    {
+                        xtype:'button',
+                        text: 'Go',
+                        handler : Advaya.App.Parent.instance.processForm,
+                        params : {
+                            form:true,
+                            mask:true,
+                            inst:Advaya.Gms.Student.instance,
+                            action:"loadStudentForm", 
+                            responseHandler:"setConsolidatedForm",
+                            req:"./student/exec.action?actionType=scv&keyString=consolidate"
+                        }
+                    }
+                ]
+            }]
+				}
+
+                    ,backLogs : {
+            height:200,
+            width : 250,
+            autoScroll:true,
+            id:'noOfAttempts-form',
+            cls:'noOfAttempts-form',
+            hidden:true,
+            renderTo:'noOfAttempts',
+            items : [
+                {
+                    xtype:'image',
+                    src : 'img/close_ico.png',
+                    style : {
+                        float : 'right',
+                        cursor : 'pointer'
+                    },
+                    height:10,
+                    width:10,
+                    listeners : {
+                        click : {
+                            element : 'el',
+                            fn : function(a,b,c) {
+                                Advaya.Gms.Student.instance.hideAttempts();
+                            }
+                        }
+                    }
+                },
+                {
+                    html:'<table border="0">
+                                <tr>
+                                  <th colspan=4 style="padding:3px;font-weight:bold">Subject</th>
+                                  <th colspan=5 style="padding:3px;font-weight:bold">Attempts</th>
+                                  <th colspan=4 style="padding:3px;font-weight:bold">Semester Taken</th>
+                                </tr>
+                                                            </table>',
+                    style : {
+                         clear : 'both',
+                         'margin-top':'20px'
+                    },
+                }
+            ]
+        },
+        
+
+        subjectAttempts : {
+            width : 250,
+            id:'subjectAttempts-form',
+            cls:'noOfAttempts-form',
+            hidden:true,
+            renderTo : Ext.getBody()
+        }
+        
+        ,bottomPanel:{
+            height:'73%',
+            width:'95%',
+            autoScroll:true,
+            renderTo:'dynacontent',
+            items:[
+                {
+                    xtype:'fieldset',
+                    id:'consolidated-field',
+                    style:{border:'none',position:'relative',paddingBottom:0},
+                    layout:'column',
+                    items:[
+                        {
+                            xtype:'fieldset',
+                            style:{border:'none',marginRight:'20px'},
+                            defaults : {labelWidth:150},
+                            items:[
+                                {
+                                    xtype:'displayfield',
+                                    fieldLabel:'Student Name',
+                                    value:'VANTLA MANOJ KUMAR REDDY'
+                                },
+                                {
+                                    xtype:'displayfield',
+                                    fieldLabel:'Register No',
+                                    value:'24691A3365'
+                                },
+                                {
+                                    xtype:'hiddenfield',
+                                    value:'24691A3365',
+                                    name:'usn'
+                                },
+                                
+                                {
+                                    xtype:'displayfield',
+                                    fieldLabel:'Student Batch',
+                                    value:'2024'
+                                },
+                            ]
+                    },
+                
+                    {
+                        xtype:'fieldset',
+                        style:{border:'none',marginLeft:'160px'},
+                        defaults : {labelWidth:150},
+                        items:[
+                            {
+                                xtype:'displayfield',
+                                fieldLabel:'Student Status',
+                                value:'Active (  )'
+                            },
+                            {
+                                xtype:'displayfield',
+                                fieldLabel:'Re-Admission',
+                                value : 'None'
+                            },
+                            {
+                                xtype:'displayfield',
+                                fieldLabel:'Year Lost',
+                                value : 'None'
+                            }
+                                                            ,{
+                                    xtype:'displayfield',
+                                    fieldLabel:'Backlog Subjects',
+                                    id:'noOfAttempts',
+                                    value : '<span style="text-decoration:underline;color:olivedrab;cursor:pointer" 
+                                                                                        >0 
+                                            '
+                                }
+                                                        ,{
+                                    xtype:'displayfield',
+                                    fieldLabel:'Class Awarded',
+                                    value:''
+                                } 
+                        ]
+                    }
+                    
+                  
+
+                    
+                    
+                                    ]
+            }
+        ]
+    },
+    spData:[
+                ],
+
+    gradeLimits:{
+
+                renderTo:'dynacontent',
+                                height : "100%",
+                width : "100%",
+                items:[
+                {
+                    xtype:'fieldset',
+                    height:"100%",
+                    layout:'anchor',
+                    style:{
+                        padding:'8px'
+                    },
+                    items:[
+                    {
+                        xtype:'fieldset',
+                        layout:'anchor',
+                        height:"100%",
+                        anchor:"100%",
+                        style:{
+                            padding:'8px'
+                        },
+                        items:
+                        [
+                        {
+                            xtype:'displayfield',  
+                            value:'<span style =" color: black; font-size:12px; font-weight: bold;">SGPA</span> = <span style =" color: #575757; font-size:12px; font-weight: 600; " ><span style =" color: black; font-size:12px; font-weight: bold; " >S</span>emester <span style =" color: black; font-size:12px; font-weight: bold; " >G</span>rade <span style =" color: black; font-size:12px; font-weight: bold; " >P</span>oint <span style =" color: black; font-size:12px; font-weight: bold; " >A</span>verage</span>'
+                        },
+                        {
+                            xtype:'displayfield',  
+                            value:'<span style =" color: black; font-size:12px; font-weight: bold;">CGPA</span> = <span style =" color: #575757; font-size:12px; font-weight: 600; " ><span style =" color: black; font-size:12px; font-weight: bold; " >C</span>umulative <span style =" color: black; font-size:12px; font-weight: bold; " >G</span>rade <span style =" color: black; font-size:12px; font-weight: bold; " >P</span>oint <span style =" color: black; font-size:12px; font-weight: bold; " >A</span>verage</span>'
+                        },
+                        {
+                            xtype:'fieldset',
+                            anchor:'20%',
+                            style:{
+                                'border':'none',
+                                'float':'left',
+                                 'border-top': '1px solid'
+                            },
+                            items:[
+                                                                                                                                
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">O</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">10.0/10<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">A+</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">9.0/10<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">A</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">8.0/10<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">B+</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">7.0/10<span>'
+                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            ]
+                        },
+                        {
+                            xtype:'fieldset',
+                            anchor:'20%',
+                            style:{
+                                'border':'none',
+                                'float':'left',
+                                'border-top': '1px solid'
+                            },
+                            items:[
+                                                                                                                                                                                                                                                                                                                                                                                                
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">B</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">6.0/10<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">C</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">5.0/10<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">P</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">4.0/10<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">F</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">0.0/10<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">Ab</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">0.0/10<span>'
+                                }
+                                                                                                                            ]
+                        },
+                        {
+                            xtype:'fieldset',
+                            anchor:'30%',
+                            style:{
+                                'border':'none',
+                                'float':'left',
+                                'border-top': '1px solid'
+                            },
+                            items:[
+                                                                                                                                
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">O</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">Outstanding<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">A+</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">Excellent<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">A</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">Very Good<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">B+</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">Good<span>'
+                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            ]
+                        },
+                        {
+                            xtype:'fieldset',
+                            anchor:'30%',
+                            style:{
+                                'border':'none',
+                                'float':'left',
+                                'border-top': '1px solid'
+                            },
+                            items:[
+                                                                                                                                                                                                                                                                                                                                                                                                
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">B</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">Above Average<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">C</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">Average<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">P</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">Pass<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">F</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">Fail<span>'
+                                }
+                                                                                                                                                                ,
+                                {
+                                    xtype:'displayfield',  
+                                    value:'<span style = "color: black; font-size:12px; font-weight: bold">Ab</span> = <span style = "color: #575757; font-size:12px; font-weight: bold">Absent<span>'
+                                }
+                                                                                                                            ]
+                        }
+                        ]
+                    }
+                    ]
+                }
+                ],
+                buttons:
+                [
+                {
+                    text:'Close',
+                    handler:Advaya.Gms.Student.handler.hideHelpWindow
+                }
+                ]
+    },
+    tables:{
+                    }
+        }
+
