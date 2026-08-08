@@ -92,9 +92,15 @@ if (fs.existsSync(clientDistPath)) {
 // Centralized Error Handler
 app.use(errorHandler);
 
-// Start Server
-app.listen(PORT, async () => {
-  await initDb();
-  console.log(`🚀 MITS Attendance AI Server running on http://localhost:${PORT}`);
-  console.log(`🔒 MITS Integration Mode: [${process.env.MITS_INTEGRATION_MODE || 'mock'}]`);
-});
+// Initialize DB
+initDb().catch((err) => console.error('Database initialization error:', err));
+
+// Start standalone Server if executed directly (e.g. node server/server.js)
+if (require.main === module) {
+  app.listen(PORT, async () => {
+    console.log(`🚀 MITS Attendance Tracker Server running on http://localhost:${PORT}`);
+    console.log(`🔒 MITS Integration Mode: [${process.env.MITS_INTEGRATION_MODE || 'mock'}]`);
+  });
+}
+
+module.exports = app;
