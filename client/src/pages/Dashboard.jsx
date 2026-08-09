@@ -24,6 +24,8 @@ export const Dashboard = () => {
   const [selectedSubject, setSelectedSubject] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
 
+  const displayStats = overall;
+
   const filteredSubjects = subjects.filter(s =>
     s.subjectCode.toLowerCase().includes(searchTerm.toLowerCase()) ||
     s.subjectName.toLowerCase().includes(searchTerm.toLowerCase())
@@ -73,33 +75,33 @@ export const Dashboard = () => {
           </div>
         </div>
 
-        <button
-          onClick={syncAttendance}
-          disabled={syncing}
-          className={`px-5 py-3.5 rounded-2xl bg-gradient-to-r from-brand-600 via-indigo-600 to-blue-600 hover:from-brand-500 hover:to-blue-500 text-white font-extrabold text-xs shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2 transition-all active:scale-95 shrink-0 ${
-            syncing ? 'opacity-60 cursor-wait' : ''
-          }`}
-        >
-          <RefreshCw size={16} className={syncing ? 'animate-spin' : ''} />
-          <span>{syncing ? 'Syncing...' : 'Sync Attendance'}</span>
-        </button>
+      </div>
+
+      <div className="flex items-center justify-between px-2 pb-1">
+        <h2 className="text-lg font-black text-white tracking-tight">Attendance Overview</h2>
       </div>
 
       {/* Attendance Summary Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         {/* Overall Percentage */}
-        <div className="bg-slate-900/90 rounded-3xl border border-slate-800 p-6 space-y-3.5 shadow-lg">
-          <div className="flex justify-between items-center">
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Overall Attendance</span>
+        <div className="bg-slate-900/90 rounded-3xl border border-slate-800 p-6 space-y-3.5 shadow-lg relative overflow-hidden">
+          {/* Subtle indicator for mode */}
+          <div className="absolute -right-6 -top-6 w-24 h-24 bg-brand-500/5 rounded-full blur-2xl pointer-events-none"></div>
+          <div className="flex justify-between items-center relative z-10">
+            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              Total Attendance
+            </span>
             <div className="p-2 rounded-xl bg-brand-500/10 text-brand-400">
               <TrendingUp size={18} />
             </div>
           </div>
-          <div className="flex items-baseline justify-between">
-            <span className="text-4xl font-black text-white">{overall.attendancePercentage}%</span>
-            <StatusBadge percentage={overall.attendancePercentage} target={targetAttendance} size="sm" />
+          <div className="flex items-baseline justify-between relative z-10">
+            <span className="text-4xl font-black text-white">{displayStats.attendancePercentage}%</span>
+            <StatusBadge percentage={displayStats.attendancePercentage} target={targetAttendance} size="sm" />
           </div>
-          <ProgressBar percentage={overall.attendancePercentage} target={targetAttendance} height="h-2.5" />
+          <div className="relative z-10">
+            <ProgressBar percentage={displayStats.attendancePercentage} target={targetAttendance} height="h-2.5" />
+          </div>
         </div>
 
         {/* Attended Classes */}
@@ -110,7 +112,7 @@ export const Dashboard = () => {
               <CheckCircle2 size={18} />
             </div>
           </div>
-          <span className="text-3xl font-black text-emerald-400 block">{overall.attendedClasses}</span>
+          <span className="text-3xl font-black text-emerald-400 block">{displayStats.attendedClasses}</span>
           <span className="text-xs text-emerald-300/80 font-semibold">Classes Present</span>
         </div>
 
@@ -122,7 +124,7 @@ export const Dashboard = () => {
               <XCircle size={18} />
             </div>
           </div>
-          <span className="text-3xl font-black text-rose-400 block">{overall.absentClasses}</span>
+          <span className="text-3xl font-black text-rose-400 block">{displayStats.absentClasses}</span>
           <span className="text-xs text-rose-300/80 font-semibold">Classes Missed</span>
         </div>
 
@@ -134,7 +136,7 @@ export const Dashboard = () => {
               <Clock size={18} />
             </div>
           </div>
-          <span className="text-3xl font-black text-indigo-200 block">{overall.totalClasses}</span>
+          <span className="text-3xl font-black text-indigo-200 block">{displayStats.totalClasses}</span>
           <span className="text-xs text-indigo-300/80 font-semibold">Total Classes Held</span>
         </div>
       </div>

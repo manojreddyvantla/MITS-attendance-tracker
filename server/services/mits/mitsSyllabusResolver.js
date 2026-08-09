@@ -93,7 +93,9 @@ function getMitsOfficialSyllabus(branchCode, yearNum, rollNumber) {
         { code: '20CSE104', name: 'Database Management Systems', baseAtt: 32, baseTot: 38 },
         { code: '20CSE105', name: 'Object Oriented Programming through Java', baseAtt: 38, baseTot: 42 },
         { code: '20MAT104', name: 'Discrete Mathematical Structures', baseAtt: 27, baseTot: 35 },
-        { code: '20CSE201', name: 'Database Management Systems Laboratory', baseAtt: 14, baseTot: 15 }
+        { code: '20CSE201', name: 'Database Management Systems Laboratory', baseAtt: 14, baseTot: 15 },
+        { code: 'APTITUDE', name: 'Aptitude Classes', baseAtt: 12, baseTot: 14 },
+        { code: 'SOFTSKILLS', name: 'Soft Skills Training', baseAtt: 10, baseTot: 12 }
       ];
     } else {
       courseRoster = [
@@ -102,7 +104,9 @@ function getMitsOfficialSyllabus(branchCode, yearNum, rollNumber) {
         { code: '20CSM103', name: 'Machine Learning & Deep Neural Networks', baseAtt: 28, baseTot: 36 },
         { code: '20CSE110', name: 'Software Engineering & Agile Methodology', baseAtt: 35, baseTot: 38 },
         { code: '20CSM104', name: 'Natural Language Processing', baseAtt: 26, baseTot: 34 },
-        { code: '20CSM201', name: 'Machine Learning Laboratory', baseAtt: 15, baseTot: 16 }
+        { code: '20CSM201', name: 'Machine Learning Laboratory', baseAtt: 15, baseTot: 16 },
+        { code: 'APTITUDE', name: 'Aptitude Classes', baseAtt: 12, baseTot: 14 },
+        { code: 'SOFTSKILLS', name: 'Soft Skills Training', baseAtt: 10, baseTot: 12 }
       ];
     }
   } else if (branchCode === '04') {
@@ -113,7 +117,9 @@ function getMitsOfficialSyllabus(branchCode, yearNum, rollNumber) {
       { code: '20ECE103', name: 'Signals and Systems', baseAtt: 27, baseTot: 35 },
       { code: '20ECE104', name: 'Analog Communications', baseAtt: 34, baseTot: 40 },
       { code: '20ECE105', name: 'Electromagnetic Fields & Waves', baseAtt: 26, baseTot: 34 },
-      { code: '20ECE201', name: 'Analog Circuits Laboratory', baseAtt: 14, baseTot: 15 }
+      { code: '20ECE201', name: 'Analog Circuits Laboratory', baseAtt: 14, baseTot: 15 },
+      { code: 'APTITUDE', name: 'Aptitude Classes', baseAtt: 12, baseTot: 14 },
+      { code: 'SOFTSKILLS', name: 'Soft Skills Training', baseAtt: 10, baseTot: 12 }
     ];
   } else {
     // General Engineering Curriculum
@@ -123,7 +129,9 @@ function getMitsOfficialSyllabus(branchCode, yearNum, rollNumber) {
       { code: '20ENG103', name: 'Basic Electrical & Electronics Engg', baseAtt: 28, baseTot: 35 },
       { code: '20ENG104', name: 'Engineering Physics & Materials', baseAtt: 29, baseTot: 36 },
       { code: '20ENG105', name: 'Environmental Science & Sustainability', baseAtt: 33, baseTot: 36 },
-      { code: '20ENG201', name: 'Engineering Physics Laboratory', baseAtt: 15, baseTot: 16 }
+      { code: '20ENG201', name: 'Engineering Physics Laboratory', baseAtt: 15, baseTot: 16 },
+      { code: 'APTITUDE', name: 'Aptitude Classes', baseAtt: 12, baseTot: 14 },
+      { code: 'SOFTSKILLS', name: 'Soft Skills Training', baseAtt: 10, baseTot: 12 }
     ];
   }
 

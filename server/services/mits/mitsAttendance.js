@@ -76,7 +76,15 @@ class MitsAttendanceService {
         console.warn("Dashboard fetch warning:", e.message);
       }
 
-      const parsedGems = parseGemsDashboard(dashboardData, sidebarData);
+      const parsedGems = parseGemsDashboard(dashboardData, sidebarData, rollNumber);
+      
+      try {
+        const fs = require('fs');
+        fs.writeFileSync('C:\\TRACKER\\server\\scratch\\manoj_dashboard.html', dashboardData);
+        fs.writeFileSync('C:\\TRACKER\\server\\scratch\\manoj_test_output.json', JSON.stringify(parsedGems, null, 2));
+      } catch (err) {
+        console.error("Dump error:", err);
+      }
 
       // 3. If live subjects found, return them
       if (parsedGems.subjects && parsedGems.subjects.length > 0) {
