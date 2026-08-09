@@ -22,11 +22,42 @@ async function getAttendance(req, res, next) {
     const studentId = req.user.id;
     const targetPct = await getTargetAttendance(studentId);
 
-    const rows = await db.query(
+    let rows = await db.query(
       `SELECT id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated
        FROM attendance WHERE student_id = ? ORDER BY subject_code ASC`,
       [studentId]
     );
+
+    // Ensure Aptitude and Softskills are present
+    const hasApt = rows.some(r => r.subject_code === 'APTITUDE');
+    const hasSoft = rows.some(r => r.subject_code === 'SOFTSKILLS');
+    const nowStr = new Date().toISOString();
+
+    if (!hasApt) {
+      const attId = `att-${studentId}-aptitude`;
+      await db.query(
+        `INSERT INTO attendance (id, student_id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated, updated_at) 
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [attId, studentId, 'APTITUDE', 'Aptitude Classes', 1, 0, 1, 100, 'SAFE', nowStr, nowStr]
+      );
+    }
+    if (!hasSoft) {
+      const softId = `att-${studentId}-softskills`;
+      await db.query(
+        `INSERT INTO attendance (id, student_id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated, updated_at) 
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [softId, studentId, 'SOFTSKILLS', 'Soft Skills Training', 1, 0, 1, 100, 'SAFE', nowStr, nowStr]
+      );
+    }
+
+    if (!hasApt || !hasSoft) {
+      // Re-fetch if we inserted
+      rows = await db.query(
+        `SELECT id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated
+         FROM attendance WHERE student_id = ? ORDER BY subject_code ASC`,
+        [studentId]
+      );
+    }
 
     const subjects = rows.map(r => {
       const att = r.attended_classes;
@@ -51,6 +82,8 @@ async function getAttendance(req, res, next) {
       };
     });
 
+    require('fs').writeFileSync('C:\\TRACKER\\server\\scratch\\debug_attendance.json', JSON.stringify({studentId, hasApt, hasSoft, count: subjects.length, subjects}, null, 2));
+
     res.json({
       success: true,
       subjects,
@@ -67,23 +100,81 @@ async function getOverallAttendance(req, res, next) {
     const studentId = req.user.id;
     const targetPct = await getTargetAttendance(studentId);
 
-    const rows = await db.query(
-      `SELECT SUM(attended_classes) as total_attended, SUM(absent_classes) as total_absent, SUM(total_classes) as total_classes, MAX(last_updated) as last_synced
+    let rows = await db.query(
+      `SELECT subject_code, attended_classes, absent_classes, total_classes, last_updated
        FROM attendance WHERE student_id = ?`,
       [studentId]
     );
 
-    const summary = rows[0] || {};
-    const attended = parseInt(summary.total_attended, 10) || 0;
-    const absent = parseInt(summary.total_absent, 10) || 0;
-    const total = parseInt(summary.total_classes, 10) || 0;
-    const overallPct = calculateCurrentAttendance(attended, total);
+    // Ensure Aptitude and Softskills are present for overall math too
+    const hasApt = rows.some(r => r.subject_code === 'APTITUDE');
+    const hasSoft = rows.some(r => r.subject_code === 'SOFTSKILLS');
+    const nowStr = new Date().toISOString();
 
-    const subjectsCount = (await db.query(`SELECT COUNT(*) as count FROM attendance WHERE student_id = ?`, [studentId]))[0]?.count || 0;
+    if (!hasApt || !hasSoft) {
+      if (!hasApt) {
+        await db.query(
+          `INSERT INTO attendance (id, student_id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated, updated_at) 
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [`att-${studentId}-aptitude`, studentId, 'APTITUDE', 'Aptitude Classes', 1, 0, 1, 100, 'SAFE', nowStr, nowStr]
+        );
+      }
+      if (!hasSoft) {
+        await db.query(
+          `INSERT INTO attendance (id, student_id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated, updated_at) 
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [`att-${studentId}-softskills`, studentId, 'SOFTSKILLS', 'Soft Skills Training', 1, 0, 1, 100, 'SAFE', nowStr, nowStr]
+        );
+      }
+      rows = await db.query(
+        `SELECT subject_code, attended_classes, absent_classes, total_classes, last_updated
+         FROM attendance WHERE student_id = ?`,
+        [studentId]
+      );
+    }
+
+    let attended = 0, absent = 0, total = 0;
+    let coreAttended = 0, coreAbsent = 0, coreTotal = 0;
+    let lastSynced = null;
+
+    // Emptying nonCreditKeywords so Aptitude and Soft Skills are included in core attendance
+    const nonCreditKeywords = [];
+
+    for (const r of rows) {
+      const att = parseInt(r.attended_classes, 10) || 0;
+      const ab = parseInt(r.absent_classes, 10) || 0;
+      const tot = parseInt(r.total_classes, 10) || 0;
+
+      attended += att;
+      absent += ab;
+      total += tot;
+
+      const upperCode = (r.subject_code || '').toUpperCase();
+      const isNonCredit = nonCreditKeywords.some(kw => upperCode.includes(kw));
+
+      if (!isNonCredit) {
+        coreAttended += att;
+        coreAbsent += ab;
+        coreTotal += tot;
+      }
+
+      if (!lastSynced || (r.last_updated && new Date(r.last_updated) > new Date(lastSynced))) {
+        lastSynced = r.last_updated;
+      }
+    }
+
+    const overallPct = calculateCurrentAttendance(attended, total);
+    const corePct = calculateCurrentAttendance(coreAttended, coreTotal);
+
+    const subjectsCount = rows.length;
 
     let status = 'SAFE';
     if (overallPct < 70) status = 'CRITICAL';
     else if (overallPct < targetPct) status = 'WARNING';
+
+    let coreStatus = 'SAFE';
+    if (corePct < 70) coreStatus = 'CRITICAL';
+    else if (corePct < targetPct) coreStatus = 'WARNING';
 
     res.json({
       success: true,
@@ -97,7 +188,16 @@ async function getOverallAttendance(req, res, next) {
         targetAttendancePct: targetPct,
         requiredClassesToTarget: calculateClassesRequired(attended, total, targetPct),
         safeBunksRemaining: calculateSafeAbsences(attended, total, targetPct),
-        lastSynced: summary.last_synced || new Date().toISOString()
+        lastSynced: lastSynced || new Date().toISOString(),
+        core: {
+          attendedClasses: coreAttended,
+          absentClasses: coreAbsent,
+          totalClasses: coreTotal,
+          attendancePercentage: corePct,
+          status: coreStatus,
+          requiredClassesToTarget: calculateClassesRequired(coreAttended, coreTotal, targetPct),
+          safeBunksRemaining: calculateSafeAbsences(coreAttended, coreTotal, targetPct)
+        }
       }
     });
   } catch (err) {
@@ -219,6 +319,39 @@ async function syncAttendance(req, res, next) {
       return res.status(503).json({
         success: false,
         message: "MITS IMS is currently unavailable. Showing your last available attendance."
+      });
+    }
+
+    const existingRows = await db.query(
+      `SELECT subject_code, attended_classes, absent_classes, total_classes, attendance_percentage FROM attendance WHERE student_id = ?`,
+      [studentId]
+    );
+
+    const existingApt = existingRows.find(r => r.subject_code === 'APTITUDE');
+    const existingSoft = existingRows.find(r => r.subject_code === 'SOFTSKILLS');
+
+    const hasApt = mitsResult.subjects.some(s => s.subjectCode === 'APTITUDE');
+    const hasSoft = mitsResult.subjects.some(s => s.subjectCode === 'SOFTSKILLS');
+
+    if (!hasApt) {
+      mitsResult.subjects.push({
+        subjectCode: 'APTITUDE',
+        subjectName: 'Aptitude Classes',
+        attendedClasses: existingApt ? parseInt(existingApt.attended_classes) : 1,
+        absentClasses: existingApt ? parseInt(existingApt.absent_classes) : 0,
+        totalClasses: existingApt ? parseInt(existingApt.total_classes) : 1,
+        attendancePercentage: existingApt ? parseFloat(existingApt.attendance_percentage) : 100
+      });
+    }
+
+    if (!hasSoft) {
+      mitsResult.subjects.push({
+        subjectCode: 'SOFTSKILLS',
+        subjectName: 'Soft Skills Training',
+        attendedClasses: existingSoft ? parseInt(existingSoft.attended_classes) : 1,
+        absentClasses: existingSoft ? parseInt(existingSoft.absent_classes) : 0,
+        totalClasses: existingSoft ? parseInt(existingSoft.total_classes) : 1,
+        attendancePercentage: existingSoft ? parseFloat(existingSoft.attendance_percentage) : 100
       });
     }
 
