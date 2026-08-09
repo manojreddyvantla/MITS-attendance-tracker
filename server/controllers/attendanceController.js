@@ -5,6 +5,7 @@
 
 const db = require('../config/db');
 const mitsService = require('../services/mits');
+const { fetchMockAttendance } = require('../services/mits/mockMitsProvider');
 const { calculateCurrentAttendance, calculateClassesRequired, calculateSafeAbsences, calculateRiskLevel } = require('../services/calculator/attendanceCalculator');
 
 // Helper to get student target attendance
@@ -33,21 +34,27 @@ async function getAttendance(req, res, next) {
     const hasSoft = rows.some(r => r.subject_code === 'SOFTSKILLS');
     const nowStr = new Date().toISOString();
 
-    if (!hasApt) {
-      const attId = `att-${studentId}-aptitude`;
-      await db.query(
-        `INSERT INTO attendance (id, student_id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated, updated_at) 
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-        [attId, studentId, 'APTITUDE', 'Aptitude Classes', 1, 0, 1, 100, 'SAFE', nowStr, nowStr]
-      );
-    }
-    if (!hasSoft) {
-      const softId = `att-${studentId}-softskills`;
-      await db.query(
-        `INSERT INTO attendance (id, student_id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated, updated_at) 
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-        [softId, studentId, 'SOFTSKILLS', 'Soft Skills Training', 1, 0, 1, 100, 'SAFE', nowStr, nowStr]
-      );
+    if (!hasApt || !hasSoft) {
+      const mockData = await fetchMockAttendance(req.user.rollNumber);
+      const mockApt = mockData.subjects.find(s => s.subjectCode === 'APTITUDE') || { attendedClasses: 12, absentClasses: 2, totalClasses: 14, attendancePercentage: 85.71 };
+      const mockSoft = mockData.subjects.find(s => s.subjectCode === 'SOFTSKILLS') || { attendedClasses: 10, absentClasses: 2, totalClasses: 12, attendancePercentage: 83.33 };
+
+      if (!hasApt) {
+        const attId = `att-${studentId}-aptitude`;
+        await db.query(
+          `INSERT INTO attendance (id, student_id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated, updated_at) 
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [attId, studentId, 'APTITUDE', 'Aptitude Classes', mockApt.attendedClasses, mockApt.absentClasses, mockApt.totalClasses, mockApt.attendancePercentage, 'SAFE', nowStr, nowStr]
+        );
+      }
+      if (!hasSoft) {
+        const softId = `att-${studentId}-softskills`;
+        await db.query(
+          `INSERT INTO attendance (id, student_id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated, updated_at) 
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [softId, studentId, 'SOFTSKILLS', 'Soft Skills Training', mockSoft.attendedClasses, mockSoft.absentClasses, mockSoft.totalClasses, mockSoft.attendancePercentage, 'SAFE', nowStr, nowStr]
+        );
+      }
     }
 
     if (!hasApt || !hasSoft) {
@@ -112,18 +119,22 @@ async function getOverallAttendance(req, res, next) {
     const nowStr = new Date().toISOString();
 
     if (!hasApt || !hasSoft) {
+      const mockData = await fetchMockAttendance(req.user.rollNumber);
+      const mockApt = mockData.subjects.find(s => s.subjectCode === 'APTITUDE') || { attendedClasses: 12, absentClasses: 2, totalClasses: 14, attendancePercentage: 85.71 };
+      const mockSoft = mockData.subjects.find(s => s.subjectCode === 'SOFTSKILLS') || { attendedClasses: 10, absentClasses: 2, totalClasses: 12, attendancePercentage: 83.33 };
+
       if (!hasApt) {
         await db.query(
           `INSERT INTO attendance (id, student_id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated, updated_at) 
            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-          [`att-${studentId}-aptitude`, studentId, 'APTITUDE', 'Aptitude Classes', 1, 0, 1, 100, 'SAFE', nowStr, nowStr]
+          [`att-${studentId}-aptitude`, studentId, 'APTITUDE', 'Aptitude Classes', mockApt.attendedClasses, mockApt.absentClasses, mockApt.totalClasses, mockApt.attendancePercentage, 'SAFE', nowStr, nowStr]
         );
       }
       if (!hasSoft) {
         await db.query(
           `INSERT INTO attendance (id, student_id, subject_code, subject_name, attended_classes, absent_classes, total_classes, attendance_percentage, status, last_updated, updated_at) 
            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-          [`att-${studentId}-softskills`, studentId, 'SOFTSKILLS', 'Soft Skills Training', 1, 0, 1, 100, 'SAFE', nowStr, nowStr]
+          [`att-${studentId}-softskills`, studentId, 'SOFTSKILLS', 'Soft Skills Training', mockSoft.attendedClasses, mockSoft.absentClasses, mockSoft.totalClasses, mockSoft.attendancePercentage, 'SAFE', nowStr, nowStr]
         );
       }
       rows = await db.query(
@@ -330,6 +341,24 @@ async function syncAttendance(req, res, next) {
     const existingApt = existingRows.find(r => r.subject_code === 'APTITUDE');
     const existingSoft = existingRows.find(r => r.subject_code === 'SOFTSKILLS');
 
+    const mockData = await fetchMockAttendance(rollNumber);
+    const mockApt = mockData.subjects.find(s => s.subjectCode === 'APTITUDE') || { attendedClasses: 12, absentClasses: 2, totalClasses: 14, attendancePercentage: 85.71 };
+    const mockSoft = mockData.subjects.find(s => s.subjectCode === 'SOFTSKILLS') || { attendedClasses: 10, absentClasses: 2, totalClasses: 12, attendancePercentage: 83.33 };
+
+    const useApt = (existingApt && parseInt(existingApt.total_classes) > 1) ? {
+      attendedClasses: parseInt(existingApt.attended_classes),
+      absentClasses: parseInt(existingApt.absent_classes),
+      totalClasses: parseInt(existingApt.total_classes),
+      attendancePercentage: parseFloat(existingApt.attendance_percentage)
+    } : mockApt;
+
+    const useSoft = (existingSoft && parseInt(existingSoft.total_classes) > 1) ? {
+      attendedClasses: parseInt(existingSoft.attended_classes),
+      absentClasses: parseInt(existingSoft.absent_classes),
+      totalClasses: parseInt(existingSoft.total_classes),
+      attendancePercentage: parseFloat(existingSoft.attendance_percentage)
+    } : mockSoft;
+
     const hasApt = mitsResult.subjects.some(s => s.subjectCode === 'APTITUDE');
     const hasSoft = mitsResult.subjects.some(s => s.subjectCode === 'SOFTSKILLS');
 
@@ -337,10 +366,7 @@ async function syncAttendance(req, res, next) {
       mitsResult.subjects.push({
         subjectCode: 'APTITUDE',
         subjectName: 'Aptitude Classes',
-        attendedClasses: existingApt ? parseInt(existingApt.attended_classes) : 1,
-        absentClasses: existingApt ? parseInt(existingApt.absent_classes) : 0,
-        totalClasses: existingApt ? parseInt(existingApt.total_classes) : 1,
-        attendancePercentage: existingApt ? parseFloat(existingApt.attendance_percentage) : 100
+        ...useApt
       });
     }
 
@@ -348,10 +374,7 @@ async function syncAttendance(req, res, next) {
       mitsResult.subjects.push({
         subjectCode: 'SOFTSKILLS',
         subjectName: 'Soft Skills Training',
-        attendedClasses: existingSoft ? parseInt(existingSoft.attended_classes) : 1,
-        absentClasses: existingSoft ? parseInt(existingSoft.absent_classes) : 0,
-        totalClasses: existingSoft ? parseInt(existingSoft.total_classes) : 1,
-        attendancePercentage: existingSoft ? parseFloat(existingSoft.attendance_percentage) : 100
+        ...useSoft
       });
     }
 
