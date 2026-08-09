@@ -114,8 +114,10 @@ async function getOverallAttendance(req, res, next) {
     );
 
     // Ensure Aptitude and Softskills are present for overall math too
-    const hasApt = rows.some(r => r.subject_code === 'APTITUDE');
-    const hasSoft = rows.some(r => r.subject_code === 'SOFTSKILLS');
+    const aptRow = rows.find(r => r.subject_code === 'APTITUDE');
+    const softRow = rows.find(r => r.subject_code === 'SOFTSKILLS');
+    const hasApt = aptRow && parseInt(aptRow.total_classes, 10) > 0;
+    const hasSoft = softRow && parseInt(softRow.total_classes, 10) > 0;
     const nowStr = new Date().toISOString();
 
     if (!hasApt || !hasSoft) {
@@ -362,7 +364,13 @@ async function syncAttendance(req, res, next) {
     const hasApt = mitsResult.subjects.some(s => s.subjectCode === 'APTITUDE');
     const hasSoft = mitsResult.subjects.some(s => s.subjectCode === 'SOFTSKILLS');
 
-    if (!hasApt) {
+    // Find if MITS returned Aptitude or SoftSkills with 0/0 attendance
+    const mitsAptIndex = mitsResult.subjects.findIndex(s => s.subjectCode === 'APTITUDE');
+    const mitsSoftIndex = mitsResult.subjects.findIndex(s => s.subjectCode === 'SOFTSKILLS');
+
+    if (mitsAptIndex !== -1 && mitsResult.subjects[mitsAptIndex].totalClasses === 0) {
+      mitsResult.subjects[mitsAptIndex] = { ...mitsResult.subjects[mitsAptIndex], ...useApt };
+    } else if (mitsAptIndex === -1) {
       mitsResult.subjects.push({
         subjectCode: 'APTITUDE',
         subjectName: 'Aptitude Classes',
@@ -370,7 +378,9 @@ async function syncAttendance(req, res, next) {
       });
     }
 
-    if (!hasSoft) {
+    if (mitsSoftIndex !== -1 && mitsResult.subjects[mitsSoftIndex].totalClasses === 0) {
+      mitsResult.subjects[mitsSoftIndex] = { ...mitsResult.subjects[mitsSoftIndex], ...useSoft };
+    } else if (mitsSoftIndex === -1) {
       mitsResult.subjects.push({
         subjectCode: 'SOFTSKILLS',
         subjectName: 'Soft Skills Training',
